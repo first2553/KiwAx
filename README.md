@@ -16,11 +16,12 @@ _G.Farm = state
 _G.Level = state
 _G.AutoEquiped = state
 _G.NoClip = state
-_G.Quest = state
+    _G.Quest = state
     spawn(function()
-        pcall(function()
 while _G.Quest do wait()
+        pcall(function()
 game:GetService("Players").LocalPlayer.PlayerGui.QuestTake.Accept1.RemoteEvent:FireServer()
+end)
 end
 end)
 end)
@@ -101,11 +102,11 @@ spawn(function()
     end
     _G.Quest = state
     spawn(function()
-        pcall(function()
 while _G.Quest do wait()
+        pcall(function()
 game:GetService("Players").LocalPlayer.PlayerGui.QuestTake.Accept1.RemoteEvent:FireServer()
-end
 end)
+end
 end)
 end)
 Section:NewToggle("Spam Skill Light", "ToggleInfo", function(state)
