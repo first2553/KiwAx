@@ -16,15 +16,6 @@ _G.Farm = state
 _G.Level = state
 _G.AutoEquiped = state
 _G.NoClip = state
-    _G.Quest = state
-    spawn(function()
-while _G.Quest do wait()
-        pcall(function()
-game:GetService("Players").LocalPlayer.PlayerGui.QuestTake.Accept1.RemoteEvent:FireServer()
-end)
-end
-end)
-end)
 spawn(function()
     game:GetService("RunService").Heartbeat:Connect(function()
         if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid") and _G.NoClip then
@@ -53,13 +44,13 @@ spawn(function()
         end)
        end)
 end)
+end)
 spawn(function()
 while _G.Level do wait()
     pcall(function()
     fireclickdetector(game:GetService("Workspace")["END TOWN [Lv550+] "]["ALL BOSS"]["KILLER QUESTTTTTTTTTTTTT"].ClickPart.ClickDetector)
     end)
 end
-end)
 end)
 Section:NewToggle("Auto Farm Kaido", "ToggleInfo", function(state)
 _G.Kaido = state
@@ -100,14 +91,6 @@ spawn(function()
             end)
         end
     end
-    _G.Quest = state
-    spawn(function()
-while _G.Quest do wait()
-        pcall(function()
-game:GetService("Players").LocalPlayer.PlayerGui.QuestTake.Accept1.RemoteEvent:FireServer()
-end)
-end
-end)
 end)
 Section:NewToggle("Spam Skill Light", "ToggleInfo", function(state)
     _G.AutoEquiped = state
@@ -123,6 +106,28 @@ while _G.Spam do wait()
     sad.Character[Name][skill].Fire:FireServer(sad)
     end)
 end
+end)
+end)
+Section:NewToggle("Auto Quest1", "ToggleInfo", function(state)
+    _G.Quest = state
+    spawn(function()
+        wait(1)
+        pcall(function()
+while _G.Quest do wait()
+game:GetService("Players").LocalPlayer.PlayerGui.QuestTake.Accept1.RemoteEvent:FireServer()
+end
+end)
+end)
+end)
+Section:NewToggle("Auto Quest2", "ToggleInfo", function(state)
+    _G.Quest = state
+    spawn(function()
+        wait(1)
+        pcall(function()
+while _G.Quest do wait()
+game:GetService("Players").LocalPlayer.PlayerGui.QuestTake.Accept2.RemoteEvent:FireServer()
+end
+end)
 end)
 end)
 Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.RightControl, function()
