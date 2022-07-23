@@ -387,6 +387,7 @@ local keys = {
     "KepWaiNiJai",
     "KawMiLux",
     "Ex-exe",
+    "FloppaDonyed",
 }
 
 local counter = 1
